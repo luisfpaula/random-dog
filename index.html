@@ -17,8 +17,8 @@
 					success: function(data, textStatus, jqXHR){
 						console.log(data.url);
 						var url = data.url;
-						var real_img='<img src="'+ url +' "width="150" height="150">';
-						$('#img').html(real_img);
+				
+						$('#img').attr("src", url);
 					},	
 					error: function(jqXHR, textStatus, errorThrow){
 						console.log("DEU ERRADO");
@@ -34,6 +34,6 @@
 
 		<button id="search_dog">Cachorro</button>
 		<br /><br />
-		<div id="img"></div>
+		<img id="img"></img>
 	</body>
 </html>
