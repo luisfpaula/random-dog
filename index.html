@@ -1,0 +1,39 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>DOG</title>
+		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		
+		<script>
+			window.onload = function(){
+				$("#search_dog").on('click', btnSearch);
+			}
+			
+			function btnSearch(){
+			var oConfiguracao = {
+					url: "https://random.dog/woof.json",
+					method: "GET",
+					success: function(data, textStatus, jqXHR){
+						console.log(data.url);
+						var url = data.url;
+						var real_img='<img src="'+ url +'">';
+						$('#img').html(real_img);
+					},	
+					error: function(jqXHR, textStatus, errorThrow){
+						console.log("DEU ERRADO");
+					}
+				};
+				$.ajax(oConfiguracao);	
+			}
+		</script>
+		
+	</head>
+	
+	<body>
+
+		<button id="search_dog">Cachorro</button>
+		
+		<div id="img"></div>
+	</body>
+</html>
