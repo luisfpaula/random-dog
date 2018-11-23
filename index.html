@@ -17,7 +17,7 @@
 					success: function(data, textStatus, jqXHR){
 						console.log(data.url);
 						var url = data.url;
-						var real_img='<img src="'+ url +'">';
+						var real_img='<img src="'+ url +' "width="150" height="150">';
 						$('#img').html(real_img);
 					},	
 					error: function(jqXHR, textStatus, errorThrow){
@@ -33,7 +33,7 @@
 	<body>
 
 		<button id="search_dog">Cachorro</button>
-		
+		<br /><br />
 		<div id="img"></div>
 	</body>
 </html>
